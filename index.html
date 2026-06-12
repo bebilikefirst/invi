@@ -138,7 +138,7 @@ transform:scale(1.05) rotate(-5deg);
 .castle{
 max-width: 320px;
 margin-bottom:20px;
-animation:float Castle 4s ease-in-out infinite;
+animation:floatCastle 4s ease-in-out infinite;
 }
 
 .castle img, .crown img, .carriage img {
@@ -252,10 +252,12 @@ h2{ font-size:45px; }
 
 <div class="stars" id="stars"></div>
 
+<!-- Aquí corregimos la ruta a la carpeta audio -->
 <audio id="bg-music" loop>
-<source src="musica.mp3" type="audio/mpeg">
+<source src="audio/musica.mp3" type="audio/mpeg">
 </audio>
 
+<!-- ESCENA 1 -->
 <section id="intro">
 <div class="clock">🕛</div>
 <h2>Érase una vez...</h2>
@@ -263,6 +265,7 @@ h2{ font-size:45px; }
 <button class="btn" onclick="startExperience()">Comenzar la Historia</button>
 </section>
 
+<!-- ESCENA 2 -->
 <section id="shoe">
 <div class="glass-slipper" onclick="revealCastle()">
 <img src="img/glass-slipper.webp.webp" alt="Zapato de Cristal">
@@ -271,6 +274,7 @@ h2{ font-size:45px; }
 <p>Toca el zapato de cristal para descubrir la invitación.</p>
 </section>
 
+<!-- ESCENA 3 -->
 <section id="castle">
 <div class="crown">
 <img src="img/crown.webp.webp" alt="Corona">
@@ -280,9 +284,18 @@ h2{ font-size:45px; }
 </div>
 <h1>Stephanie</h1>
 <p>Mis XV Años</p>
-<button class="btn" onclick="document.getElementById('details').scrollIntoView()">Ver Detalles</button>
+<button class="btn" onclick="document.getElementById('regalo').scrollIntoView()">Ver Detalles</button>
 </section>
 
+<!-- ESCENA 4: EL REGALO -->
+<section id="regalo">
+<div class="chest" id="chest-icon" onclick="showGift()">🎁</div>
+<div class="message" id="gift">
+Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerrado.
+</div>
+</section>
+
+<!-- ESCENA 5: DETALLES -->
 <section id="details">
 <div class="card">
 <h2>Una Noche Mágica</h2>
@@ -294,6 +307,7 @@ Nos encantaría contar con tu presencia para compartir juntos la alegría de sus
 </div>
 </section>
 
+<!-- ESCENA 6: CUENTA REGRESIVA -->
 <section>
 <h2>Cuenta Regresiva</h2>
 <div class="countdown">
@@ -304,6 +318,7 @@ Nos encantaría contar con tu presencia para compartir juntos la alegría de sus
 </div>
 </section>
 
+<!-- ESCENA 7: INVITACIÓN REAL -->
 <section>
 <div class="card">
 <h2>Invitación Real</h2>
@@ -316,13 +331,7 @@ Nos encantaría contar con tu presencia para compartir juntos la alegría de sus
 </div>
 </section>
 
-<section>
-<div class="chest" id="chest-icon" onclick="showGift()">🎁</div>
-<div class="message" id="gift">
-Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerrado.
-</div>
-</section>
-
+<!-- ESCENA FINAL -->
 <section>
 <div class="final">
 <div class="carriage">
@@ -340,7 +349,6 @@ Te esperamos
 </section>
 
 <script>
-/* Estrellas de fondo */
 for(let i=0; i<180; i++){
     let star = document.createElement('div');
     star.className = 'star';
@@ -350,7 +358,6 @@ for(let i=0; i<180; i++){
     document.getElementById('stars').appendChild(star);
 }
 
-/* Funciones de navegación e interacción */
 function startExperience() {
     const audio = document.getElementById('bg-music');
     if(audio) {
@@ -363,7 +370,6 @@ function revealCastle() {
     document.getElementById('castle').scrollIntoView();
 }
 
-/* Control del cofre de regalos */
 function showGift(){
     const giftDiv = document.getElementById('gift');
     const chest = document.getElementById('chest-icon');
@@ -377,7 +383,6 @@ function showGift(){
     }
 }
 
-/* Cuenta regresiva */
 const eventDate = new Date("July 18, 2026 19:00:00").getTime();
 
 const timer = setInterval(() => {

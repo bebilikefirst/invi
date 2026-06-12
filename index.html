@@ -116,43 +116,57 @@ animation:pulse 2s infinite;
 50%{ transform:scale(1.05); }
 }
 
-/* Zapato */
+/* Zapato de Cristal */
 .glass-slipper {
 cursor: pointer;
 transition: .5s;
-max-width: 250px;
-margin: 0 auto;
+max-width: 280px;
+margin: 0 auto 20px auto;
 }
 
 .glass-slipper img {
 width: 100%;
 height: auto;
-filter: drop-shadow(0 0 15px rgba(125, 183, 255, 0.6));
+filter: drop-shadow(0 0 20px rgba(125, 183, 255, 0.7));
 }
 
 .glass-slipper:hover{
-transform:scale(1.1) rotate(-10deg);
+transform:scale(1.05) rotate(-5deg);
 }
 
 /* Castillo y Corona */
 .castle{
-max-width: 280px;
+max-width: 320px;
 margin-bottom:20px;
-animation:float 4s ease-in-out infinite;
+animation:float Castle 4s ease-in-out infinite;
 }
 
-.castle img, .crown {
+.castle img, .crown img, .carriage img {
 width: 100%;
 height: auto;
 }
 
 .crown {
-max-width: 100px;
+max-width: 120px;
 margin-bottom: 10px;
+filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
 }
 
-@keyframes float{
-50%{ transform:translateY(-15px); }
+@keyframes floatCastle{
+50%{ transform:translateY(-12px); }
+}
+
+/* Carruaje Mágico */
+.carriage {
+max-width: 380px;
+margin: 20px auto;
+animation: floatCarriage 5s ease-in-out infinite;
+filter: drop-shadow(0 0 15px rgba(159, 216, 255, 0.5));
+}
+
+@keyframes floatCarriage {
+0%, 100% { transform: translateY(0) translateX(0); }
+50% { transform: translateY(-8px) translateX(4px); }
 }
 
 /* Cuenta Regresiva */
@@ -222,12 +236,13 @@ line-height:2;
 }
 
 @media(max-width:768px){
-h1{ font-size:70px; }
-h2{ font-size:50px; }
+h1{ font-size:65px; }
+h2{ font-size:45px; }
 .clock{ font-size:80px; }
-.glass-slipper{ max-width:180px; }
-.castle{ max-width:200px; }
-.crown { max-width: 70px; }
+.glass-slipper{ max-width:200px; }
+.castle{ max-width:240px; }
+.crown { max-width: 90px; }
+.carriage { max-width: 280px; }
 .box { width: 120px; padding: 15px; }
 .number { font-size: 32px; }
 }
@@ -250,16 +265,18 @@ h2{ font-size:50px; }
 
 <section id="shoe">
 <div class="glass-slipper" onclick="revealCastle()">
-<img src="img/glass-slipper.webp" alt="Zapato de Cristal">
+<img src="img/glass-slipper.webp.webp" alt="Zapato de Cristal">
 </div>
 <h2>El Zapato de Cristal</h2>
 <p>Toca el zapato de cristal para descubrir la invitación.</p>
 </section>
 
 <section id="castle">
-<img src="img/crown.webp" class="crown" alt="Corona">
+<div class="crown">
+<img src="img/crown.webp.webp" alt="Corona">
+</div>
 <div class="castle">
-<img src="img/castle.webp" alt="Castillo" />
+<img src="img/castle.webp.webp" alt="Castillo" />
 </div>
 <h1>Stephanie</h1>
 <p>Mis XV Años</p>
@@ -308,8 +325,12 @@ Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerra
 
 <section>
 <div class="final">
+<div class="carriage">
+<img src="img/carriage.webp.webp" alt="Carruaje de Unicornio">
+</div>
+
 ✨✨✨
-<br><br>
+<br>
 Te esperamos
 <br><br>
 👑 Stephanie 👑
@@ -331,10 +352,9 @@ for(let i=0; i<180; i++){
 
 /* Funciones de navegación e interacción */
 function startExperience() {
-    // Intentar reproducir música cuando el usuario interactúa
     const audio = document.getElementById('bg-music');
     if(audio) {
-        audio.play().catch(e => console.log("El navegador bloqueó el audio temporalmente"));
+        audio.play().catch(e => console.log("El audio requiere interacción previa"));
     }
     document.getElementById('shoe').scrollIntoView();
 }
@@ -343,6 +363,7 @@ function revealCastle() {
     document.getElementById('castle').scrollIntoView();
 }
 
+/* Control del cofre de regalos */
 function showGift(){
     const giftDiv = document.getElementById('gift');
     const chest = document.getElementById('chest-icon');
@@ -352,7 +373,7 @@ function showGift(){
         chest.innerHTML = "🎁";
     } else {
         giftDiv.style.display = 'block';
-        chest.innerHTML = "🔓💌"; // Cambia el icono al abrirse
+        chest.innerHTML = "🔓💌";
     }
 }
 

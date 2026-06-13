@@ -12,11 +12,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
-        /* Fondo claro y elegante inspirado en las imágenes */
         body { 
             font-family: 'Cormorant Garamond', serif; 
             background: #f4f8fc; 
-            color: #4a5568; /* Gris oscuro/azulado para mejor lectura */
+            color: #4a5568; 
             overflow-x: hidden; 
         }
         
@@ -28,7 +27,6 @@
             z-index: -2; 
         }
 
-        /* Las "estrellas" ahora son destellos mágicos celestes y sutiles */
         .stars { position: fixed; inset: 0; overflow: hidden; z-index: -1; }
         .star { 
             position: absolute; 
@@ -43,11 +41,10 @@
         
         section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; text-align: center; }
         
-        /* Tipografía de caligrafía tipo Cenicienta */
         h1 { 
             font-family: 'Alex Brush', cursive; 
             font-size: 130px; 
-            color: #6b8eb3; /* Azul Cenicienta */
+            color: #6b8eb3; 
             font-weight: normal;
             margin-bottom: -10px;
         }
@@ -62,7 +59,6 @@
         
         p { max-width: 900px; line-height: 1.9; font-size: 24px; color: #5a6a7c; font-weight: 500; }
         
-        /* Botón elegante en tonos pasteles */
         .btn { 
             margin-top: 35px; 
             padding: 16px 45px; 
@@ -83,7 +79,6 @@
         }
         .btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(167, 200, 230, 0.6); }
 
-        /* Contenedor general para imágenes con sombra sutil y elegante */
         .image-container {
             margin-bottom: 25px;
             filter: drop-shadow(0 10px 15px rgba(107, 142, 179, 0.25));
@@ -95,7 +90,6 @@
 
         @keyframes pulse { 50% { transform: scale(1.03); } }
 
-        /* Imágenes existentes */
         .glass-slipper { cursor: pointer; transition: .5s; max-width: 250px; margin: 0 auto 20px auto; }
         .glass-slipper img { width: 100%; height: auto; filter: drop-shadow(0 15px 20px rgba(107, 142, 179, 0.3)); }
         .glass-slipper:hover { transform: scale(1.05) rotate(-5deg); }
@@ -108,7 +102,6 @@
         .carriage { max-width: 350px; margin: 20px auto; animation: floatCarriage 6s ease-in-out infinite; filter: drop-shadow(0 10px 15px rgba(107, 142, 179, 0.2)); }
         @keyframes floatCarriage { 0%, 100% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-6px) translateX(3px); } }
         
-        /* Cajas de Cuenta Regresiva estilo Tarjeta Clara */
         .countdown { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
         .box { 
             width: 160px; 
@@ -126,7 +119,6 @@
         }
         .number { font-size: 50px; font-weight: bold; color: #5a7fa8; font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
         
-        /* Tarjetas de Información */
         .card { 
             background: rgba(255, 255, 255, 0.85); 
             border: 1px solid rgba(167, 200, 230, 0.6); 
@@ -138,7 +130,6 @@
         }
         .info { margin: 15px 0; font-size: 24px; color: #4a5568; }
         
-        /* Mensaje del regalo */
         .message { 
             margin-top: 30px; 
             font-size: 24px; 
@@ -233,7 +224,7 @@
 <section>
     <div class="card">
         <h2>Invitación Real</h2>
-        <div class="info">📅 Sábado 18 de Julio de 2026</div>
+        <div class="info"> Sábado 18 de Julio de 2026</div>
         <div class="info">🕖 7:00 PM</div>
         <div class="info">📍 Av. Felipe Pezo</div>
         <div class="info">🏰 Complejo de La Salle</div>
@@ -245,7 +236,6 @@
 <section>
     <div class="final">
         <div class="carriage"><img src="img/carriage.webp" alt="Carruaje de Unicornio"></div>
-        ✨✨✨<br>Te esperamos<br><br>👑 Stephanie 👑<br><br>🏰 💎 👠 ✨
     </div>
 </section>
 

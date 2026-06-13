@@ -1,414 +1,309 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Stephanie | Mis XV Años</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Cinzel',serif;
-background:#081321;
-color:white;
-overflow-x:hidden;
-}
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephanie | Mis XV Años</title>
+    <meta name="description" content="Invitación mágica a los XV años de Stephanie.">
     
-/* Fondo */
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background:radial-gradient(circle at top,#3e74c7 0%,#081321 55%);
-z-index:-2;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        /* Fondo claro y elegante inspirado en las imágenes */
+        body { 
+            font-family: 'Cormorant Garamond', serif; 
+            background: #f4f8fc; 
+            color: #4a5568; /* Gris oscuro/azulado para mejor lectura */
+            overflow-x: hidden; 
+        }
+        
+        body::before { 
+            content: ''; 
+            position: fixed; 
+            inset: 0; 
+            background: radial-gradient(circle at center, #ffffff 0%, #eaf2f8 80%, #d4e4f0 100%); 
+            z-index: -2; 
+        }
 
-/* Estrellas */
-.stars{
-position:fixed;
-inset:0;
-overflow:hidden;
-z-index:-1;
-}
+        /* Las "estrellas" ahora son destellos mágicos celestes y sutiles */
+        .stars { position: fixed; inset: 0; overflow: hidden; z-index: -1; }
+        .star { 
+            position: absolute; 
+            width: 4px; 
+            height: 4px; 
+            background: rgba(142, 176, 212, 0.6); 
+            border-radius: 50%; 
+            animation: twinkle 3s infinite; 
+            box-shadow: 0 0 5px rgba(142, 176, 212, 0.4);
+        }
+        @keyframes twinkle { 0%, 100% { opacity: .2; transform: scale(1); } 50% { opacity: 1; transform: scale(1.5); } }
+        
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; text-align: center; }
+        
+        /* Tipografía de caligrafía tipo Cenicienta */
+        h1 { 
+            font-family: 'Alex Brush', cursive; 
+            font-size: 130px; 
+            color: #6b8eb3; /* Azul Cenicienta */
+            font-weight: normal;
+            margin-bottom: -10px;
+        }
+        
+        h2 { 
+            font-family: 'Alex Brush', cursive; 
+            font-size: 85px; 
+            margin-bottom: 20px; 
+            color: #6b8eb3;
+            font-weight: normal;
+        }
+        
+        p { max-width: 900px; line-height: 1.9; font-size: 24px; color: #5a6a7c; font-weight: 500; }
+        
+        /* Botón elegante en tonos pasteles */
+        .btn { 
+            margin-top: 35px; 
+            padding: 16px 45px; 
+            border: 1px solid #b4d1eb; 
+            border-radius: 40px; 
+            cursor: pointer; 
+            background: linear-gradient(45deg, #a7c8e6, #c5dff5); 
+            color: #ffffff; 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px; 
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none; 
+            transition: .4s; 
+            display: inline-block; 
+            box-shadow: 0 8px 20px rgba(167, 200, 230, 0.4);
+        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(167, 200, 230, 0.6); }
 
-.star{
-position:absolute;
-width:3px;
-height:3px;
-background:white;
-border-radius:50%;
-animation:twinkle 3s infinite;
-}
+        /* Contenedor general para imágenes con sombra sutil y elegante */
+        .image-container {
+            margin-bottom: 25px;
+            filter: drop-shadow(0 10px 15px rgba(107, 142, 179, 0.25));
+        }
 
-@keyframes twinkle{
-0%,100%{opacity:.2}
-50%{opacity:1}
-}
+        .clock-image { max-width: 250px; height: auto; animation: pulse 2.5s infinite; }
+        .gift-image-btn { max-width: 220px; height: auto; cursor: pointer; transition: transform 0.4s; }
+        .gift-image-btn:hover { transform: scale(1.1) rotate(2deg); }
 
-section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:40px 20px;
-text-align:center;
-}
+        @keyframes pulse { 50% { transform: scale(1.03); } }
 
-h1{
-font-family:'Great Vibes',cursive;
-font-size:110px;
-color:#dff4ff;
-text-shadow:0 0 30px #7db7ff;
-}
+        /* Imágenes existentes */
+        .glass-slipper { cursor: pointer; transition: .5s; max-width: 250px; margin: 0 auto 20px auto; }
+        .glass-slipper img { width: 100%; height: auto; filter: drop-shadow(0 15px 20px rgba(107, 142, 179, 0.3)); }
+        .glass-slipper:hover { transform: scale(1.05) rotate(-5deg); }
+        
+        .castle { max-width: 320px; margin-bottom: 10px; animation: floatCastle 5s ease-in-out infinite; }
+        .castle img, .crown img, .carriage img { width: 100%; height: auto; }
+        .crown { max-width: 100px; margin-bottom: 15px; filter: drop-shadow(0 5px 10px rgba(107, 142, 179, 0.2)); }
+        @keyframes floatCastle { 50% { transform: translateY(-10px); } }
+        
+        .carriage { max-width: 350px; margin: 20px auto; animation: floatCarriage 6s ease-in-out infinite; filter: drop-shadow(0 10px 15px rgba(107, 142, 179, 0.2)); }
+        @keyframes floatCarriage { 0%, 100% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-6px) translateX(3px); } }
+        
+        /* Cajas de Cuenta Regresiva estilo Tarjeta Clara */
+        .countdown { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+        .box { 
+            width: 160px; 
+            padding: 25px; 
+            border-radius: 20px; 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(167, 200, 230, 0.5); 
+            box-shadow: 0 10px 25px rgba(107, 142, 179, 0.1);
+            color: #6b8eb3;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .number { font-size: 50px; font-weight: bold; color: #5a7fa8; font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+        
+        /* Tarjetas de Información */
+        .card { 
+            background: rgba(255, 255, 255, 0.85); 
+            border: 1px solid rgba(167, 200, 230, 0.6); 
+            backdrop-filter: blur(10px); 
+            padding: 50px; 
+            border-radius: 25px; 
+            max-width: 850px; 
+            box-shadow: 0 15px 35px rgba(107, 142, 179, 0.12);
+        }
+        .info { margin: 15px 0; font-size: 24px; color: #4a5568; }
+        
+        /* Mensaje del regalo */
+        .message { 
+            margin-top: 30px; 
+            font-size: 24px; 
+            display: none; 
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 25px; 
+            border-radius: 15px; 
+            max-width: 500px;
+            border: 1px solid rgba(167, 200, 230, 0.4);
+            box-shadow: 0 8px 20px rgba(107, 142, 179, 0.15);
+            color: #5a6a7c;
+        }
+        
+        .final { font-size: 30px; line-height: 2; color: #6b8eb3; }
 
-h2{
-font-family:'Great Vibes',cursive;
-font-size:70px;
-margin-bottom:20px;
-color:#dff4ff;
-}
-
-p{
-max-width:900px;
-line-height:1.9;
-font-size:20px;
-}
-
-.btn{
-margin-top:35px;
-padding:16px 40px;
-border:none;
-border-radius:40px;
-cursor:pointer;
-background:linear-gradient(45deg,#5ba8ff,#9bd8ff);
-color:white;
-font-size:18px;
-text-decoration:none;
-transition:.3s;
-display: inline-block;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* Reloj */
-.clock{
-font-size:120px;
-margin-bottom:25px;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-50%{ transform:scale(1.05); }
-}
-
-/* Zapato de Cristal */
-.glass-slipper {
-cursor: pointer;
-transition: .5s;
-max-width: 280px;
-margin: 0 auto 20px auto;
-}
-
-.glass-slipper img {
-width: 100%;
-height: auto;
-filter: drop-shadow(0 0 20px rgba(125, 183, 255, 0.7));
-}
-
-.glass-slipper:hover{
-transform:scale(1.05) rotate(-5deg);
-}
-
-/* Castillo y Corona */
-.castle{
-max-width: 320px;
-margin-bottom:20px;
-animation:floatCastle 4s ease-in-out infinite;
-}
-
-.castle img, .crown img, .carriage img {
-width: 100%;
-height: auto;
-}
-
-.crown {
-max-width: 120px;
-margin-bottom: 10px;
-filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
-}
-
-@keyframes floatCastle{
-50%{ transform:translateY(-12px); }
-}
-
-/* Carruaje Mágico */
-.carriage {
-max-width: 380px;
-margin: 20px auto;
-animation: floatCarriage 5s ease-in-out infinite;
-filter: drop-shadow(0 0 15px rgba(159, 216, 255, 0.5));
-}
-
-@keyframes floatCarriage {
-0%, 100% { transform: translateY(0) translateX(0); }
-50% { transform: translateY(-8px) translateX(4px); }
-}
-
-/* Cuenta Regresiva */
-.countdown{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:40px;
-}
-
-.box{
-width:160px;
-padding:25px;
-border-radius:25px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.15);
-}
-
-.number{
-font-size:42px;
-font-weight:bold;
-color:#9fd8ff;
-}
-
-/* Tarjetas */
-.card{
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-backdrop-filter:blur(10px);
-padding:40px;
-border-radius:30px;
-max-width:850px;
-}
-
-.info{
-margin:15px 0;
-font-size:22px;
-}
-
-/* Cofre */
-.chest{
-font-size:120px;
-cursor:pointer;
-transition: transform 0.3s;
-user-select: none;
-}
-.chest:hover {
-transform: scale(1.1);
-}
-
-.message{
-margin-top:30px;
-font-size:22px;
-display:none;
-background: rgba(255, 255, 255, 0.05);
-padding: 20px;
-border-radius: 15px;
-max-width: 500px;
-}
-
-/* Final */
-.final{
-font-size:30px;
-line-height:2;
-}
-
-@media(max-width:768px){
-h1{ font-size:65px; }
-h2{ font-size:45px; }
-.clock{ font-size:80px; }
-.glass-slipper{ max-width:200px; }
-.castle{ max-width:240px; }
-.crown { max-width: 90px; }
-.carriage { max-width: 280px; }
-.box { width: 120px; padding: 15px; }
-.number { font-size: 32px; }
-}
-</style>
+        @media(max-width:768px){
+            h1 { font-size: 90px; }
+            h2 { font-size: 60px; }
+            p { font-size: 20px; }
+            .clock-image { max-width: 180px; }
+            .gift-image-btn { max-width: 160px; }
+            .glass-slipper { max-width: 180px; }
+            .castle { max-width: 240px; }
+            .crown { max-width: 80px; }
+            .carriage { max-width: 250px; }
+            .box { width: 120px; padding: 15px; }
+            .number { font-size: 38px; }
+            .card { padding: 30px; }
+            .info { font-size: 20px; }
+        }
+    </style>
 </head>
 <body>
 
- <!-- Mover el audio aquí, al principio, ayuda a que cargue más rápido -->
 <audio id="bg-music" loop>
-    <source src="audio/musica.mp3.mp3" type="audio/mpeg">
+    <source src="audio/musica.mp3" type="audio/mpeg">
 </audio>
 
 <div class="stars" id="stars"></div>
 
-<!-- ESCENA 1 -->
 <section id="intro">
-<div class="clock">🕛</div>
-<h2>Érase una vez...</h2>
-<p>Una historia mágica está por comenzar.</p>
-<button class="btn" onclick="startExperience()">Comenzar la Historia</button>
+    <div class="image-container">
+        <img src="img/clock.webp" alt="Reloj Mágico" class="clock-image">
+    </div>
+    <h2>Érase una vez...</h2>
+    <p>Una historia mágica está por comenzar.</p>
+    <button class="btn" onclick="startExperience()">Comenzar la Historia</button>
 </section>
 
-<!-- ESCENA 2 -->
 <section id="shoe">
-<div class="glass-slipper" onclick="revealCastle()">
-<img src="img/glass-slipper.webp.webp" alt="Zapato de Cristal">
-</div>
-<h2>El Zapato de Cristal</h2>
-<p>Toca el zapato de cristal para descubrir la invitación.</p>
+    <div class="glass-slipper" onclick="revealCastle()">
+        <img src="img/glass-slipper.webp" alt="Zapato de Cristal">
+    </div>
+    <h2>El Zapato de Cristal</h2>
+    <p>Toca el zapato de cristal para descubrir la invitación.</p>
 </section>
 
-<!-- ESCENA 3 -->
 <section id="castle">
-<div class="crown">
-<img src="img/crown.webp.webp" alt="Corona">
-</div>
-<div class="castle">
-<img src="img/castle.webp.webp" alt="Castillo" />
-</div>
-<h1>Stephanie</h1>
-<p>Mis XV Años</p>
-<button class="btn" onclick="document.getElementById('regalo').scrollIntoView()">Ver Detalles</button>
+    <div class="crown"><img src="img/crown.webp" alt="Corona"></div>
+    <div class="castle"><img src="img/castle.webp" alt="Castillo" /></div>
+    <h1>Stephanie</h1>
+    <p>Mis XV Años</p>
+    <button class="btn" onclick="document.getElementById('regalo').scrollIntoView()">Ver Detalles</button>
 </section>
 
-<!-- ESCENA 4: EL REGALO -->
 <section id="regalo">
-<div class="chest" id="chest-icon" onclick="showGift()">🎁</div>
-<div class="message" id="gift">
-Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerrado.
-</div>
+    <div class="image-container">
+        <img src="img/gift-box.webp" alt="Regalo" id="gift-image" class="gift-image-btn" onclick="toggleGiftDisplay()">
+    </div>
+    <div class="message" id="gift-message">
+        Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerrado.
+    </div>
 </section>
 
-<!-- ESCENA 5: DETALLES -->
 <section id="details">
-<div class="card">
-<h2>Una Noche Mágica</h2>
-<p>
-Hace quince años Dios nos regaló el más hermoso de los tesoros. Hoy, con el corazón lleno de orgullo y gratitud, celebramos una etapa inolvidable en la vida de nuestra querida hija, Stephanie.
-<br><br>
-Nos encantaría contar con tu presencia para compartir juntos la alegría de sus quince años.
-</p>
-</div>
+    <div class="card">
+        <h2>Una Noche Mágica</h2>
+        <p>Hace quince años Dios nos regaló el más hermoso de los tesoros. Hoy, con el corazón lleno de orgullo y gratitud, celebramos una etapa inolvidable en la vida de nuestra querida hija, Stephanie.<br><br>Nos encantaría contar con tu presencia para compartir juntos la alegría de sus quince años.</p>
+    </div>
 </section>
 
-<!-- ESCENA 6: CUENTA REGRESIVA -->
 <section>
-<h2>Cuenta Regresiva</h2>
-<div class="countdown">
-<div class="box"><div id="days" class="number">0</div>Días</div>
-<div class="box"><div id="hours" class="number">0</div>Horas</div>
-<div class="box"><div id="minutes" class="number">0</div>Minutos</div>
-<div class="box"><div id="seconds" class="number">0</div>Segundos</div>
-</div>
+    <h2>Cuenta Regresiva</h2>
+    <div class="countdown">
+        <div class="box"><div id="days" class="number">0</div>Días</div>
+        <div class="box"><div id="hours" class="number">0</div>Horas</div>
+        <div class="box"><div id="minutes" class="number">0</div>Minutos</div>
+        <div class="box"><div id="seconds" class="number">0</div>Segundos</div>
+    </div>
 </section>
 
-<!-- ESCENA 7: INVITACIÓN REAL -->
 <section>
-<div class="card">
-<h2>Invitación Real</h2>
-<div class="info">📅 Sábado 18 de Julio de 2026</div>
-<div class="info">🕖 7:00 PM</div>
-<div class="info">📍 Av. Felipe Pezo</div>
-<div class="info">🏰 Complejo de La Salle</div>
-<br>
-<a class="btn" href="https://forms.gle/C5okqTLubHgnV4YV7" target="_blank">Confirmar Asistencia</a>
-</div>
+    <div class="card">
+        <h2>Invitación Real</h2>
+        <div class="info">📅 Sábado 18 de Julio de 2026</div>
+        <div class="info">🕖 7:00 PM</div>
+        <div class="info">📍 Av. Felipe Pezo</div>
+        <div class="info">🏰 Complejo de La Salle</div>
+        <br>
+        <a class="btn" href="https://forms.gle/C5okqTLubHgnV4YV7" target="_blank">Confirmar Asistencia</a>
+    </div>
 </section>
 
-<!-- ESCENA FINAL -->
 <section>
-<div class="final">
-<div class="carriage">
-<img src="img/carriage.webp.webp" alt="Carruaje de Unicornio">
-</div>
-
-✨✨✨
-<br>
-Te esperamos
-<br><br>
-👑 Stephanie 👑
-<br><br>
-🏰 💎 👠 ✨
-</div>
+    <div class="final">
+        <div class="carriage"><img src="img/carriage.webp" alt="Carruaje de Unicornio"></div>
+        ✨✨✨<br>Te esperamos<br><br>👑 Stephanie 👑<br><br>🏰 💎 👠 ✨
+    </div>
 </section>
 
 <script>
-for(let i=0; i<180; i++){
-    let star = document.createElement('div');
-    star.className = 'star';
-    star.style.left = Math.random() * 100 + '%';
-    star.style.top = Math.random() * 100 + '%';
-    star.style.animationDelay = Math.random() * 5 + 's';
-    document.getElementById('stars').appendChild(star);
-}
-
-function startExperience() {
-    const audio = document.getElementById('bg-music');
-    if(audio) {
-        audio.play().catch(e => console.log("El audio requiere interacción previa"));
-    }
-    document.getElementById('shoe').scrollIntoView();
-}
-
-function revealCastle() {
-    document.getElementById('castle').scrollIntoView();
-}
-
-function showGift(){
-    const giftDiv = document.getElementById('gift');
-    const chest = document.getElementById('chest-icon');
-    
-    if(giftDiv.style.display === 'block') {
-        giftDiv.style.display = 'none';
-        chest.innerHTML = "🎁";
-    } else {
-        giftDiv.style.display = 'block';
-        chest.innerHTML = "🔓💌";
-    }
-}
-
-const eventDate = new Date("July 18, 2026 19:00:00").getTime();
-
-const timer = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    if (distance < 0) {
-        clearInterval(timer);
-        document.getElementById("days").innerHTML = 0;
-        document.getElementById("hours").innerHTML = 0;
-        document.getElementById("minutes").innerHTML = 0;
-        document.getElementById("seconds").innerHTML = 0;
-        return;
+    for(let i=0; i<80; i++){
+        let star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 5 + 's';
+        document.getElementById('stars').appendChild(star);
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    function startExperience() {
+        const audio = document.getElementById('bg-music');
+        if(audio) { audio.play().catch(e => console.log("Audio bloqueado")); }
+        document.getElementById('shoe').scrollIntoView();
+    }
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-}, 1000);
+    function revealCastle() {
+        document.getElementById('castle').scrollIntoView();
+    }
+
+    function toggleGiftDisplay() {
+        const messageDiv = document.getElementById('gift-message');
+        const giftImg = document.getElementById('gift-image');
+        
+        const imgRegalo = "img/gift-box.webp";
+        const imgSobre = "img/envelope.webp"; 
+
+        if (messageDiv.style.display === 'block') {
+            messageDiv.style.display = 'none';
+            giftImg.src = imgRegalo;
+            giftImg.alt = "Regalo";
+        } else {
+            messageDiv.style.display = 'block';
+            giftImg.src = imgSobre;
+            giftImg.alt = "Sobre Cerrado";
+        }
+    }
+
+    const eventDate = new Date("July 18, 2026 19:00:00").getTime();
+    const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById("days").innerHTML = 0;
+            document.getElementById("hours").innerHTML = 0;
+            document.getElementById("minutes").innerHTML = 0;
+            document.getElementById("seconds").innerHTML = 0;
+            return;
+        }
+        document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
 </script>
 
 </body>

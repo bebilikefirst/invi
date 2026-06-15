@@ -205,17 +205,8 @@
     <div class="castle"><img src="img/castle.webp.webp" alt="Castillo" /></div>
     <h1>Stephanie</h1>
     <p>Mis XV Años</p>
-    <button class="btn" onclick="document.getElementById('regalo').scrollIntoView()">Ver Detalles</button>
-</section>
-
-<section id="regalo">
-    <div class="image-container">
-        <img src="img/5.png" alt="Regalo" id="gift-image" class="gift-image-btn" onclick="toggleGiftDisplay()">
-    </div>
-    <div class="message" id="gift-message">
-        Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerrado.
-        <div class="scroll-hint">👇 Desplázate hacia abajo para seguir viendo la invitación 👇</div>
-    </div>
+    <!-- Se actualizó la referencia a "details" para seguir el flujo de lectura -->
+    <button class="btn" onclick="document.getElementById('details').scrollIntoView()">Ver Detalles</button>
 </section>
 
 <section id="details">
@@ -258,6 +249,16 @@
         <div class="info">🏰 Complejo de La Salle</div>
         <br>
         <a class="btn" href="https://forms.gle/C5okqTLubHgnV4YV7" target="_blank">Confirmar Asistencia</a>
+    </div>
+</section>
+
+<!-- SECCIÓN DE REGALO MOVIDA AL FINAL -->
+<section id="regalo">
+    <div class="image-container">
+        <img src="img/5.png" alt="Regalo" id="gift-image" class="gift-image-btn" onclick="toggleGiftDisplay()">
+    </div>
+    <div class="message" id="gift-message">
+        Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerrado.
     </div>
 </section>
 

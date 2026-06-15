@@ -137,10 +137,24 @@
             background: rgba(255, 255, 255, 0.9); 
             padding: 25px; 
             border-radius: 15px; 
-            max-width: 500px;
+            max-width: 550px;
             border: 1px solid rgba(167, 200, 230, 0.4);
             box-shadow: 0 8px 20px rgba(107, 142, 179, 0.15);
             color: #5a6a7c;
+        }
+
+        .scroll-hint {
+            font-size: 18px;
+            color: #6b8eb3;
+            margin-top: 15px;
+            font-style: italic;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
         
         .final { font-size: 30px; line-height: 2; color: #6b8eb3; }
@@ -200,6 +214,7 @@
     </div>
     <div class="message" id="gift-message">
         Si deseas tener un detalle conmigo, agradeceré con mucho cariño un sobre cerrado.
+        <div class="scroll-hint">👇 Desplázate hacia abajo para seguir viendo la invitación 👇</div>
     </div>
 </section>
 
@@ -207,6 +222,20 @@
     <div class="card">
         <h2>Una Noche Mágica</h2>
         <p>Hace quince años Dios nos regaló el más hermoso de los tesoros. Hoy, con el corazón lleno de orgullo y gratitud, celebramos una etapa inolvidable en la vida de nuestra querida hija, Stephanie.<br><br>Nos encantaría contar con tu presencia para compartir juntos la alegría de sus quince años.</p>
+    </div>
+</section>
+
+<!-- NUEVA SECCIÓN: DRESS CODE -->
+<section id="dress-code">
+    <div class="card">
+        <h2>Dress Code</h2>
+        <div class="info" style="font-size: 28px; font-weight: bold;">
+            👗 Elegante 👔
+        </div>
+        <div class="info" style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(167, 200, 230, 0.4);">
+            <strong style="color: #6b8eb3; font-size: 26px;">Mensaje Importante:</strong><br>
+            <span style="font-size: 22px;">El color celeste se reserva exclusivamente para la quinceañera. ✨</span>
+        </div>
     </div>
 </section>
 
@@ -222,8 +251,8 @@
 
 <section>
     <div class="card">
-        <h2>Estás invitado </h2>
-        <div class="info"> Sábado 18 de Julio de 2026</div>
+        <h2>Estás invitado</h2>
+        <div class="info">📅 Sábado 18 de Julio de 2026</div>
         <div class="info">🕖 7:00 PM</div>
         <div class="info">📍 Av. Felipe Pezo</div>
         <div class="info">🏰 Complejo de La Salle</div>
@@ -234,8 +263,7 @@
 
 <section>
     <div class="final">
-        <div class="carriage"><img src="img/
-carriage.webp.webp" alt="Carruaje de Unicornio"></div>
+        <div class="carriage"><img src="img/carriage.webp.webp" alt="Carruaje de Unicornio"></div>
     </div>
 </section>
 
